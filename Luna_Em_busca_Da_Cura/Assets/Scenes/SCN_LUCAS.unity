@@ -464,8 +464,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2097534894136818560, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
+      propertyPath: Speed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097534894136818560, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: JumpForce
-      value: 2000
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818560, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: jumpForce
@@ -484,6 +488,10 @@ PrefabInstance:
       value: 0.2497189
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818561, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d34ebc25a21188b4f953a910986b640d, type: 2}
+    - target: {fileID: 2097534894136818561, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_Offset.x
       value: -0.009247541
       objectReference: {fileID: 0}
@@ -501,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818562, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_GravityScale
-      value: 60
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818564, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_RootOrder
@@ -509,11 +517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818564, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.9
+      value: -13.05
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818564, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.36
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 2097534894136818564, guid: ddb964b4a4f389044985049feaee3cb9, type: 3}
       propertyPath: m_LocalPosition.z

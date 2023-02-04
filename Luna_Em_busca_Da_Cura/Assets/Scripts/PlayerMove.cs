@@ -3,10 +3,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D Rb;
-    public float Speed = 15f;
-    public float JumpForce = 2f;
+    public float Speed = 17f;
+    public float JumpForce = 400f;
     public bool Grounded;
-    public LayerMask GroundLayers; 
+    public LayerMask GroundLayers;
 
     public void Start()
     {
@@ -15,13 +15,13 @@ public class PlayerMove : MonoBehaviour
 
     public void Update()
     {
+        Jump();
         VerifyGrounded();
     }
 
     private void FixedUpdate()
     {
         Move();
-        Jump();
     }
 
     void Move()
@@ -38,13 +38,11 @@ public class PlayerMove : MonoBehaviour
     void Jump()
     {
         if (IsPressJumpButtons() && Grounded)
-        {
             Rb.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
-        }
     }
 
     private bool IsPressJumpButtons()
-        => (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Joystick1Button0));
+        => (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button0));
 
     void VerifyGrounded()
     {
