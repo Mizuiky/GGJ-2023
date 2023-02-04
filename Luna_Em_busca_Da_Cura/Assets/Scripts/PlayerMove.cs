@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D Rb;
-    public float Speed = 20f;
-    public float JumpForce = 2000f;
+    public float Speed = 15f;
+    public float JumpForce = 2f;
     public bool Grounded;
     public LayerMask GroundLayers; 
 
@@ -28,20 +28,23 @@ public class PlayerMove : MonoBehaviour
     {
         var getAxys = Input.GetAxisRaw("Horizontal");
         if (getAxys > 0)
-            Rb.velocity = new Vector2(Speed, 0);
+            Rb.velocity = new Vector2(Speed, Rb.velocity.y - 1 );
         else if (getAxys < 0)
-            Rb.velocity = new Vector2(-Speed, 0);
+            Rb.velocity = new Vector2(-Speed, Rb.velocity.y - 1);
         else
-            Rb.velocity = Vector2.zero;
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
     }
 
     void Jump()
     {
-        if (Input.GetButton("Jump") && Grounded)
+        if (IsPressJumpButtons() && Grounded)
         {
-            Rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+            Rb.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
         }
     }
+
+    private bool IsPressJumpButtons()
+        => (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Joystick1Button0));
 
     void VerifyGrounded()
     {
