@@ -11,7 +11,11 @@ public class UIController : Singleton<UIController>
     [SerializeField]
     private List<UIItem> _uiItems;
 
-    public TextMeshProUGUI timer;
+    [SerializeField]
+    private TextMeshProUGUI timer;
+
+    [SerializeField]
+    private DialogBox _dialogBox;
 
     private Dictionary<ItemType, UIItem> _items;
     private List<ItemInfo> _hudInfo;
@@ -26,6 +30,8 @@ public class UIController : Singleton<UIController>
     private void Init()
     {
         _hudInfo = new List<ItemInfo>();
+        EnableItems(false);
+        _dialogBox.gameObject.SetActive(false);
     }
 
     public void FiilUiItemList(List<SO_Item> collectable)
@@ -64,6 +70,14 @@ public class UIController : Singleton<UIController>
             _isPaused = false;
             //open pause game
             Time.timeScale = 0f;
+        }
+    }
+
+    private void EnableItems(bool hide)
+    {
+        foreach(UIItem item in _uiItems)
+        {
+            item.EnableItem(hide);
         }
     }
 
