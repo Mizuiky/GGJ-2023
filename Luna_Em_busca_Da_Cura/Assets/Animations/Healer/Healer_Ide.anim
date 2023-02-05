@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ANI_Healer_Ide
+  m_Name: Healer_Ide
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: e40805730eafec242900c2bb6c84dec4, type: 3}
-    - time: 0.2
+    - time: 0.21666667
       value: {fileID: 21300000, guid: cff8b9ced1aad56418edc659b9fdc057, type: 3}
-    - time: 0.38333333
+    - time: 0.43333334
       value: {fileID: 21300000, guid: fc57ca144f178b54585969740cebde6e, type: 3}
-    - time: 0.5833333
+    - time: 0.65
       value: {fileID: 21300000, guid: 9c8f658ab282a624a96857a388d7a78a, type: 3}
     attribute: m_Sprite
     path: 
@@ -55,7 +55,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.59999996
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

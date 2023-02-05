@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ColectItem : MonoBehaviour
 {
+    [SerializeField]
     private ItemCollectable _item;
 
     void Start()
@@ -14,7 +15,6 @@ public class ColectItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _item.OnCollect();
-        }
-            
+        }          
     }
 }
