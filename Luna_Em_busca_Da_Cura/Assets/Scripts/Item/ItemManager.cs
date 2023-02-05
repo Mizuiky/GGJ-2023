@@ -1,6 +1,7 @@
 using Core;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ItemManager : Singleton<ItemManager>
 {
@@ -29,19 +30,30 @@ public class ItemManager : Singleton<ItemManager>
     {
         while (_itemList.Count < _itemCollectableList.Count)
         {
-            if(randomIndex != _previousItem)
-            {
-                _itemList.Add(_itemCollectableList[randomIndex].Type);              
-            }
-            else
-            {
-                randomIndex = Random.Range(0, _itemCollectableList.Count - 1);
-            }
+            randomIndex = Random.Range(0, _itemCollectableList.Count - 1);
 
-            _previousItem = randomIndex;
+            var randomType = _itemCollectableList[randomIndex].Type;
+
+            if (randomIndex != _previousItem)
+            {
+                if(CheckType(randomType))
+                {
+                    Debug.Log("item name:" + randomType.ToString());
+                    _itemList.Add(randomType);
+                }
+
+                _previousItem = randomIndex;
+            }
         }
         
         UIController.Instance.FiilUiItemList(_itemCollectableList);
+    }
+
+    private bool CheckType(ItemType type)
+    {
+        var count = _itemList.Where(x => x == type).Count();
+
+        return count != 0 ? false : true;
     }
 
     public void NotifyItemManager(ItemType type)
