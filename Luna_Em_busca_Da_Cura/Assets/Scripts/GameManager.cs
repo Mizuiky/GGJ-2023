@@ -17,7 +17,7 @@ public class GameManager : Singleton<GameManager>
     public void Start()
     {
         InitializeItems();
-        InitializeMainMenu();
+        InitializeScene(sceneType.SCN_MainMenu);
     }
 
     public void Update()
@@ -53,11 +53,15 @@ public class GameManager : Singleton<GameManager>
 
     #region Manage Scenes
 
-    private void InitializeMainMenu()
+    public void InitializeScene(sceneType type)
     {
-        _sceneController.LoadAdditiveScene(sceneType.SCN_Vilage);
+        _sceneController.LoadAdditiveScene(type);
     }
 
+    public void UnloadScene(sceneType type)
+    {
+        _sceneController.UnLoadAdditiveScene(type);
+    }
     #endregion
 
     //code to get when is the healer parte to tell luna the ingredients of this run
