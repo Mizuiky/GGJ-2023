@@ -1,18 +1,48 @@
-using System.Collections;
+using Core;
 using System.Collections.Generic;
 using UnityEngine;
-using Core;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    private List<SO_Item> _itemCollectable;
+    [SerializeField]
+    private List<SO_Item> _itemCollectableList;
 
-    private List<ItemType> _listSet;
+    private List<ItemType> _itemList;
 
-    private void RandomizeItens()
+    private int _previousItem;
+    private int randomIndex;
+
+    public void Start()
     {
-        //var random
-        UIController.Instance.FiilUiItemList(_itemCollectable);
+        Init();
+    }
+
+    private void Init()
+    {
+        _itemCollectableList = new List<SO_Item>();
+        _itemList = new List<ItemType>();
+
+        _previousItem = -1;
+        randomIndex = -1;
+    }
+
+    public void RandomizeItems()
+    {
+        while (_itemList.Count < _itemCollectableList.Count)
+        {
+            if(randomIndex != _previousItem)
+            {
+                _itemList.Add(_itemCollectableList[randomIndex].Type);              
+            }
+            else
+            {
+                randomIndex = Random.Range(0, _itemCollectableList.Count);
+            }
+
+            _previousItem = randomIndex;
+        }
+        
+        UIController.Instance.FiilUiItemList(_itemCollectableList);
     }
 
     public void NotifyItemManager(ItemType type)

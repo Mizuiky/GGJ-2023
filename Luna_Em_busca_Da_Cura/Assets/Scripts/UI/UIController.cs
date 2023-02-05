@@ -17,16 +17,6 @@ public class UIController : Singleton<UIController>
 
     private bool _isPaused;
 
-    private void InitDictionary()
-    {
-        _items = new Dictionary<ItemType, UIItem>();
-
-        foreach(UIItem item in UiItems)
-        {
-            _items.Add(item.Type, item);
-        }
-    }
-
     public void FiilUiItemList(List<SO_Item> collectable)
     {
         for(int i = 0; i < collectable.Count; i++)
@@ -36,6 +26,16 @@ public class UIController : Singleton<UIController>
         }
 
         InitDictionary();
+    }
+
+    private void InitDictionary()
+    {
+        _items = new Dictionary<ItemType, UIItem>();
+
+        foreach (UIItem item in UiItems)
+        {
+            _items.Add(item.Type, item);
+        }
     }
 
     public void Update()
