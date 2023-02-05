@@ -16,8 +16,6 @@ public class AudioManager : Singleton<AudioManager>
             s.source.pitch = s.Picth;
             s.source.loop = s.Loop;
         }
-
-        PlayAudio("PlayerJump");
     }
 
     public void PlayAudio(string name)

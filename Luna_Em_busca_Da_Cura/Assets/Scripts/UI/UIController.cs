@@ -30,7 +30,8 @@ public class UIController : Singleton<UIController>
     private void Init()
     {
         _hudInfo = new List<ItemInfo>();
-        EnableItems(false);
+
+        //EnableItems(false);
         _dialogBox.gameObject.SetActive(false);
     }
 
@@ -73,7 +74,7 @@ public class UIController : Singleton<UIController>
         }
     }
 
-    private void EnableItems(bool hide)
+    public void EnableItems(bool hide)
     {
         foreach(UIItem item in _uiItems)
         {

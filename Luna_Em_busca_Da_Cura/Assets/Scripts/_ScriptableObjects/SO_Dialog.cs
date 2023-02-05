@@ -9,7 +9,7 @@ public class SO_Dialog : ScriptableObject
 {
     public List<DialogData> _dialog;
 
-    public EndDialogBase _endPrefab;
+    public GameObject _endPrefab;
 }
 
 [Serializable]

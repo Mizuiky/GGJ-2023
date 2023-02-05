@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24820182f6838014db6a12eb3b726afe, type: 3}
-  m_Name: SO_NPC1
+  m_Name: SO_NPC_BunnyBoy
   m_EditorClassIdentifier: 
   _dialog:
-  - _characterName: Luna
+  - _characterName: Linus
     _image: {fileID: 0}
     _animator: {fileID: 0}
-    _text: "Entao minha missao \xE9 coletar tais ingredientes curandeiro?"
-  - _characterName: Luna
+    _text: "Adoro cenouras! \xE9 de longe minha comida favorita, principalmente o
+      porque?"
+  - _characterName: Linus
     _image: {fileID: 0}
     _animator: {fileID: 0}
-    _text: Ok! vou embusca deles para te ajudar, espere um pouquinho que em seguida
-      lhe trago eles
+    _text: Porque ela ajuda na visao!
+  - _characterName: Linus
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Como eu sei? Porque eu nunca vi um coelho usando oculos!
   _endPrefab: {fileID: 0}

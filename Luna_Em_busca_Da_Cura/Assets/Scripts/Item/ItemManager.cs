@@ -46,14 +46,14 @@ public class ItemManager : Singleton<ItemManager>
                     _itemList.Add(randomItem);
 
                     if (_itemList.Count == 3)
-                        break;
+                    {
+                        UIController.Instance.FiilUiItemList(_itemList);
+                        return;
+                    }                  
                 }
-
                 _previousItem = randomIndex;
             }
-        }
-        
-        UIController.Instance.FiilUiItemList(_itemList);
+         }    
     }
 
     private bool CheckType(ItemType type)

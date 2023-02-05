@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rb: {fileID: 227398077875191055}
   Speed: 17
-  JumpForce: 400
+  JumpForce: 130
   Grounded: 0
   GroundLayers:
     serializedVersion: 2
