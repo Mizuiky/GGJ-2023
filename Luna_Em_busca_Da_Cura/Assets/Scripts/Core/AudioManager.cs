@@ -16,7 +16,6 @@ public class AudioManager : Singleton<AudioManager>
             s.source.pitch = s.Picth;
             s.source.loop = s.Loop;
         }
-        PlayAudio("MainMenuSound");
     }
 
     public void PlayAudio(string name)

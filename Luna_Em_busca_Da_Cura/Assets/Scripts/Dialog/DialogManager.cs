@@ -28,7 +28,7 @@ public class DialogManager : Singleton<DialogManager>
 
     private DialogData[] _dialogs;
 
-    private EndDialogBase _endDialog;
+    private GameObject _endDialog;
 
     #endregion
 
@@ -115,8 +115,7 @@ public class DialogManager : Singleton<DialogManager>
 
             if (_currentDialogIndex == _dialogs.Length)
             {
-                if(_endDialog != null)
-                    _endDialog.EndCallBack();
+                CheckEndDialog(_endDialog.gameObject);
 
                 _dialogBox.ActivateDialog(false);
                 return;
@@ -127,4 +126,15 @@ public class DialogManager : Singleton<DialogManager>
             Write();
         }       
     }  
+
+    public void CheckEndDialog(GameObject endObject)
+    {
+        if(endObject != null)
+        {
+            var end = endObject.GetComponent<EndDialogBase>();
+
+            if(end != null)
+                end.EndCallBack();
+        }
+    }
 }

@@ -21,6 +21,11 @@ public class UIItem : MonoBehaviour
         get => _type;
     }
 
+    public void Start()
+    {
+        _qtd.text = 0.ToString();
+    }
+
     public int Qtd
     {
         get => Int32.Parse(_qtd.text);
@@ -33,6 +38,8 @@ public class UIItem : MonoBehaviour
         _currentValue = 0;
         _qtd.text = _currentValue.ToString();
         _itemImage.sprite = itemInfo._itemImage;
+
+        EnableItem(true);
     }
 
     public void UpdateQtd()

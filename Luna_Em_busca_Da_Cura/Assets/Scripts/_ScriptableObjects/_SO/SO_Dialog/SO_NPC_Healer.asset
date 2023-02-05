@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24820182f6838014db6a12eb3b726afe, type: 3}
+  m_Name: SO_NPC_Healer
+  m_EditorClassIdentifier: 
+  _dialog:
+  - _characterName: Curandeiro
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Ah, Luna! Finalmente voce chegou.
+  - _characterName: Curandeiro
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Precisao fazer uma sopa para os coelhos doentes do vilarejo. Mas acabaram
+      alguns ingredientes.
+  - _characterName: Curandeiro
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Voce poderia me ajudar?
+  - _characterName: Luna
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Claro! do que o senhor precisa?
+  - _characterName: Curandeiro
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: "\xD3timo! Preciso que voce colha os ingredientes desta lista, vou colocar
+      na sua bolsa, nao se esqueca! Tube bem?"
+  - _characterName: Luna
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Sim! farei meu melhor para ajudar o vilarejo.
+  - _characterName: Curandeiro
+    _image: {fileID: 0}
+    _animator: {fileID: 0}
+    _text: Quando os tiver encontrado traga-os para mim, porfavor! estarei esperando
+      por voce.
+  _endPrefab: {fileID: 1567769019879924816, guid: d5f1a629328a6fe43b644ad5dd69d269, type: 3}

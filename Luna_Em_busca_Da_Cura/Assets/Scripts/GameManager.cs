@@ -16,7 +16,8 @@ public class GameManager : Singleton<GameManager>
 
     public void Start()
     {
-        InitializeItems();
+        List<ItemInfo> _gameItems = new List<ItemInfo>();
+
         InitializeScene(sceneType.SCN_MainMenu);
     }
 
@@ -30,13 +31,13 @@ public class GameManager : Singleton<GameManager>
 
     #region Manage Items
 
-    private void InitializeItems()
+    public void InitializeItems()
     {
-        List<ItemInfo> _gameItems = new List<ItemInfo>();
-
         ItemManager.Instance.RandomizeItems();
 
         _isGameRunning = true;
+
+        UIController.Instance.EnableItems(true);
     }
 
     private void GetItemInformationForHealer()
