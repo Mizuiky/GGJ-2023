@@ -302,5 +302,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db81d0d209eb7ca45b64e0ae8f4fc94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 952884322495031472}
+  _itemImage: {fileID: 952884322495031472}
   _qtd: {fileID: 4771844700710847492}

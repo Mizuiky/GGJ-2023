@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -7,7 +5,7 @@ using UnityEngine.UI;
 public class UIItem : MonoBehaviour
 {
     [SerializeField]
-    private Image item;
+    private Image _itemImage;
 
     [SerializeField]
     private TextMeshProUGUI _qtd;
@@ -22,11 +20,13 @@ public class UIItem : MonoBehaviour
         get => _type;
     }
 
-    public void init(ItemType type, int increment)
+    public void init(SO_Item itemInfo)
     {
-        _type = type;
-        _increment = increment;
+        _type = itemInfo.Type;
+        _increment = itemInfo.Pontuation;
         _currentValue = 0;
+        _qtd.text = _currentValue.ToString();
+        _itemImage.sprite = itemInfo._itemImage;
     }
 
     public void UpdateQtd()

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96804bbdce260d645bb5844d60208996, type: 3}
-  m_Name: Beet
+  m_Name: Potato
   m_EditorClassIdentifier: 
-  Name: Beet
-  _itemImage: {fileID: 21300000, guid: 9049cdf627f236c4c993da2cdd958b90, type: 3}
-  Type: 1
-  Pontuation: 2
+  Name: Potato
+  _itemImage: {fileID: 21300000, guid: 070b88595f36cb34aa69f2218cc46ef2, type: 2}
+  Type: 3
+  Pontuation: 4
   _particle: {fileID: 0}
   _OnCollectAudio: {fileID: 0}

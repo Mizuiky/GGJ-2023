@@ -22,7 +22,7 @@ public class UIController : Singleton<UIController>
         for(int i = 0; i < collectable.Count; i++)
         {
             var item = collectable[i];
-            UiItems[i].init(item.Type, item.Pontuation);
+            UiItems[i].init(item);
         }
 
         InitDictionary();
