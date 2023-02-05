@@ -23,10 +23,14 @@ public class AudioManager : Singleton<AudioManager>
         var s = Array.Find(sounds, sound => sound.Name == name);
         if (s == null)
             Debug.LogWarning($"Not find sound with name {name}");
-        else
-        {
+        else if (!s.source.isPlaying)
             s.source.Play();
-            print("ASDASDASD");
-        }
+    }
+
+    public void StopAudio(string name)
+    {
+        var s = Array.Find(sounds, sound => sound.Name == name);
+        if (s != null && s.source.isPlaying)
+            s.source.Stop();
     }
 }

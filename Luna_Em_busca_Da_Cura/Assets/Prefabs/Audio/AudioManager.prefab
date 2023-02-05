@@ -61,6 +61,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - Name: BirdsFlorest
+    AudioClip: {fileID: 8300000, guid: b8742bbbf554ba5459352b94461125aa, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: CompletedJob
+    AudioClip: {fileID: 8300000, guid: f5a3c4cdefcbc87419f4dfb860f7a876, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: FlorestSound
+    AudioClip: {fileID: 8300000, guid: 924060ff1193700499782edcaa8742d3, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: GetRoot
+    AudioClip: {fileID: 8300000, guid: e850259cdc7c31344af5f0dfb588bee6, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: HealerSpeak
+    AudioClip: {fileID: 8300000, guid: e7e563702db97654783824d89a676dbb, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: LunaSpeak
+    AudioClip: {fileID: 8300000, guid: 165a4f28ae6138245afb92cf3c481032, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: MainMenuSound
+    AudioClip: {fileID: 8300000, guid: 9381d0aeaac822241acd4cc0570819db, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 1
+    source: {fileID: 0}
   - Name: PlayerJump
     AudioClip: {fileID: 8300000, guid: ade726953d3b9f2428b68ace937b8d3c, type: 3}
     Volume: 0.5
@@ -69,6 +111,36 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: PlayerRun
     AudioClip: {fileID: 8300000, guid: b7794f612a45dd54aad186809b74339a, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: RabbitRandom1
+    AudioClip: {fileID: 8300000, guid: adbd0517c4d16504a990302f3bd4aa01, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: RabbitRandom2
+    AudioClip: {fileID: 8300000, guid: d39bcea059b54644ea8eed48863c64e4, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: RabbitRandom3
+    AudioClip: {fileID: 8300000, guid: 0d3d12fd8ced21b4eafdc83c89d1a332, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: RootOutGround
+    AudioClip: {fileID: 8300000, guid: 5f131608f82dac14e95c40714ea60e69, type: 3}
+    Volume: 0.5
+    Picth: 1
+    Loop: 0
+    source: {fileID: 0}
+  - Name: VilageSound
+    AudioClip: {fileID: 8300000, guid: 0326a8c7a3c5dc7418ed0b598a4951b6, type: 3}
     Volume: 0.5
     Picth: 1
     Loop: 0
