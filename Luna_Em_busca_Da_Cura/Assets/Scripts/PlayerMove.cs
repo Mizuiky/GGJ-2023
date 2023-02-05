@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float JumpForce = 400f;
     public bool Grounded;
     public LayerMask GroundLayers;
+    public Animator Animator; 
 
     public void Start()
     {
@@ -28,26 +29,45 @@ public class PlayerMove : MonoBehaviour
     {
         var getAxys = Input.GetAxisRaw("Horizontal");
         if (getAxys > 0)
+        {
+            transform.localEulerAngles = new Vector2(0, 0);
             Rb.velocity = new Vector2(Speed, Rb.velocity.y - 1 );
+            Animator.SetFloat("Speed", Rb.velocity.x);
+        }
         else if (getAxys < 0)
+        {
+            transform.localEulerAngles = new Vector2(0, 180);
             Rb.velocity = new Vector2(-Speed, Rb.velocity.y - 1);
+            Animator.SetFloat("Speed", Rb.velocity.x * -1);
+        }
         else
+        {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
+            Animator.SetFloat("Speed", 0f);
+        }
     }
 
     void Jump()
     {
         if (IsPressJumpButtons() && Grounded)
+        {
             Rb.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
+        }
     }
 
     private bool IsPressJumpButtons()
         => (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button0));
 
+    public void OnLanding()
+    {
+        Animator.SetBool("Grounded", false);
+    }
+
     void VerifyGrounded()
     {
         Grounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
            new Vector2(transform.position.x + 0.5f, transform.position.y - 51f), GroundLayers).IsTouchingLayers();
+        Animator.SetBool("Grounded", Grounded);
     }
 
     private void OnDrawGizmos()
