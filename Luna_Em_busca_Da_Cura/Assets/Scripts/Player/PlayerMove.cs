@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float JumpForce = 400f;
     public bool Grounded;
     public LayerMask GroundLayers;
-    public Animator Animator; 
+    public Animator Animator;
 
     public void Start()
     {
@@ -33,12 +33,14 @@ public class PlayerMove : MonoBehaviour
             transform.localEulerAngles = new Vector2(0, 0);
             Rb.velocity = new Vector2(Speed, Rb.velocity.y - 1 );
             Animator.SetFloat("Speed", Rb.velocity.x);
+            AudioManager.inst.PlayAudio("PlayerRun");
         }
         else if (getAxys < 0)
         {
             transform.localEulerAngles = new Vector2(0, 180);
             Rb.velocity = new Vector2(-Speed, Rb.velocity.y - 1);
             Animator.SetFloat("Speed", Rb.velocity.x * -1);
+            AudioManager.inst.PlayAudio("PlayerRun");
         }
         else
         {
@@ -51,6 +53,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (IsPressJumpButtons() && Grounded)
         {
+            AudioManager.inst.PlayAudio("PlayerJump");
             Rb.AddForce(JumpForce * Vector2.up, ForceMode2D.Impulse);
         }
     }
