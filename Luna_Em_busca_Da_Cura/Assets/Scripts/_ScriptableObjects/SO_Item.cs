@@ -1,11 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class SO_Item : MonoBehaviour
+public class SO_Item : ScriptableObject
 {
-    public string Name { get; set; }
-    public ItemType Type { get; set; }
-    public int Pontuation { get; set; }
+    public string Name;
+
+    public ItemType Type;
+
+    public int Pontuation;
+
+    public ParticleSystem _particle;
+
+    public AudioClip _OnCollectAudio;
 }
