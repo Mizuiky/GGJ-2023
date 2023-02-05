@@ -13,8 +13,6 @@ public class UIController : Singleton<UIController>
 
     public TextMeshProUGUI timer;
 
-    public Button pause;
-
     private Dictionary<ItemType, UIItem> _items;
 
     private bool _isPaused;
@@ -29,16 +27,32 @@ public class UIController : Singleton<UIController>
         }
     }
 
+    public void FiilUiItemList(List<SO_Item> collectable)
+    {
+        for(int i = 0; i < collectable.Count; i++)
+        {
+            var item = collectable[i];
+            UiItems[i].init(item.Type, item.Pontuation);
+        }
+
+        InitDictionary();
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
+
     public void PauseGame()
     {
         if(_isPaused)
         {
             _isPaused = false;
+            //open pause game
             Time.timeScale = 0f;
-        }
-        else
-        {
-            Time.timeScale = 1f;
         }
     }
 
