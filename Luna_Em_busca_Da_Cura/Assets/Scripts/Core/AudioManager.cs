@@ -1,28 +1,23 @@
 using System;
 using UnityEngine;
+using Core;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     public Sound[] sounds;
-    public static AudioManager inst = null;
 
-    private void Awake()
+    private void Start()
     {
-        if (inst == null)
-            inst = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
-
         foreach (Sound s in sounds)
         {
-            s.AudioSource = gameObject.AddComponent<AudioSource>();
-            s.AudioSource.clip = s.AudioClip;
-            s.AudioSource.volume = s.Volume;
-            s.AudioSource.pitch = s.Picth;
-            s.AudioSource.loop = s.Loop;
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.AudioClip;
+            s.source.volume = s.Volume;
+            s.source.pitch = s.Picth;
+            s.source.loop = s.Loop;
         }
+
+        PlayAudio("PlayerJump");
     }
 
     public void PlayAudio(string name)
@@ -32,7 +27,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"Not find sound with name {name}");
         else
         {
-            s.AudioSource.Play();
+            s.source.Play();
             print("ASDASDASD");
         }
     }
