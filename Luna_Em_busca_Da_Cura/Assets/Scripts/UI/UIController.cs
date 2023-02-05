@@ -9,20 +9,31 @@ using System.Linq;
 public class UIController : Singleton<UIController>
 {
     [SerializeField]
-    private List<UIItem> UiItems;
+    private List<UIItem> _uiItems;
 
     public TextMeshProUGUI timer;
 
     private Dictionary<ItemType, UIItem> _items;
+    private List<ItemInfo> _hudInfo;
 
     private bool _isPaused;
+
+    public void Start()
+    {
+        Init();    
+    }
+
+    private void Init()
+    {
+        _hudInfo = new List<ItemInfo>();
+    }
 
     public void FiilUiItemList(List<SO_Item> collectable)
     {
         for(int i = 0; i < collectable.Count; i++)
         {
             var item = collectable[i];
-            UiItems[i].init(item);
+            _uiItems[i].init(item);
         }
 
         InitDictionary();
@@ -32,7 +43,7 @@ public class UIController : Singleton<UIController>
     {
         _items = new Dictionary<ItemType, UIItem>();
 
-        foreach (UIItem item in UiItems)
+        foreach (UIItem item in _uiItems)
         {
             _items.Add(item.Type, item);
         }
@@ -63,5 +74,20 @@ public class UIController : Singleton<UIController>
             var item = _items[type];
             item.UpdateQtd();
         }     
+    }
+
+    //Will get final results
+    private List<ItemInfo> GetHudResults()
+    {
+        foreach(UIItem uiItem in _uiItems)
+        {
+            _hudInfo.Add(new ItemInfo()
+            {
+                type = uiItem.Type,
+                qtd = uiItem.Qtd
+            });
+        }
+
+        return _hudInfo;
     }
 }
