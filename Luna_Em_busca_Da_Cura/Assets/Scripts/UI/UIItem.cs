@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class UIItem : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class UIItem : MonoBehaviour
     public ItemType Type
     {
         get => _type;
+    }
+
+    public int Qtd
+    {
+        get => Int32.Parse(_qtd.text);
     }
 
     public void init(SO_Item itemInfo)

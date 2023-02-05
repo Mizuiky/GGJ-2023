@@ -9,7 +9,6 @@ public class ItemManager : Singleton<ItemManager>
     private List<SO_Item> _itemCollectableList;
 
     private List<SO_Item> _itemList;
-
     private List<ItemInfo> _itemInfoList;
 
     private int _previousItem;
@@ -64,7 +63,7 @@ public class ItemManager : Singleton<ItemManager>
         return count != 0 ? false : true;
     }
 
-    public void NotifyItemManager(ItemType type)
+    public void NotifyUiController(ItemType type)
     {
         UIController.Instance.UpdateUIItem(type);
     }
