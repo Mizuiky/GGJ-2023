@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96804bbdce260d645bb5844d60208996, type: 3}
-  m_Name: Manioc
+  m_Name: Orange
   m_EditorClassIdentifier: 
-  Name: Manioc
+  Name: Orange
   Type: 2
   Pontuation: 3
   _particle: {fileID: 0}
