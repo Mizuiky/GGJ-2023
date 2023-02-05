@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField]
+    private SceneController _sceneController;
+
     public delegate List<ItemInfo> OnItemToShow();
     public event OnItemToShow onItemToShow;
 
@@ -14,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public void Start()
     {
         InitializeItems();
+        InitializeMainMenu();
     }
 
     public void Update()
@@ -24,6 +28,8 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    #region Manage Items
+
     private void InitializeItems()
     {
         List<ItemInfo> _gameItems = new List<ItemInfo>();
@@ -33,14 +39,27 @@ public class GameManager : Singleton<GameManager>
         _isGameRunning = true;
     }
 
-    //code to get when is the healer parte to tell luna the ingredients of this run
     private void GetItemInformationForHealer()
     {
         _gameItems = onItemToShow.Invoke();
     }
 
-    private void GetFinalResults()
+    private void GetHUDFinalResults()
     {
 
     }
+
+    #endregion
+
+    #region Manage Scenes
+
+    private void InitializeMainMenu()
+    {
+        _sceneController.LoadAdditiveScene(sceneType.SCN_Vilage);
+    }
+
+    #endregion
+
+    //code to get when is the healer parte to tell luna the ingredients of this run
+    
 }

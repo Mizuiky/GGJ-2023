@@ -40,4 +40,9 @@ public class UIItem : MonoBehaviour
         _currentValue += _increment;
         _qtd.text = _currentValue.ToString();
     }
+
+    public void EnableItem(bool enable)
+    {
+        gameObject.SetActive(enable);
+    }
 }
