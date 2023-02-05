@@ -13,8 +13,6 @@ public class ColectItem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
-            _item.OnCollect();
-        }          
+            _item.OnCollect();       
     }
 }

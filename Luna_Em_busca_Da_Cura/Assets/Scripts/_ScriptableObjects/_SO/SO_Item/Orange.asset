@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   Name: Orange
+  _itemImage: {fileID: 21300000, guid: 53231ee7489528c4bb4dba073edd5b01, type: 3}
   Type: 2
   Pontuation: 3
   _particle: {fileID: 0}

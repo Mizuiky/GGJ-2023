@@ -4,7 +4,9 @@ public enum ItemType
 {
     Carrot,
     Beet,
-    Orange
+    Orange,
+    Potato,
+    Turnip
 }
 
 public class ItemCollectableBase : MonoBehaviour, IItemCollectable

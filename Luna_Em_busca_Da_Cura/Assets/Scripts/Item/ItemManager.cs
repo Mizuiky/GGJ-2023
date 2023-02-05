@@ -8,7 +8,9 @@ public class ItemManager : Singleton<ItemManager>
     [SerializeField]
     private List<SO_Item> _itemCollectableList;
 
-    private List<ItemType> _itemList;
+    private List<SO_Item> _itemList;
+
+    private List<ItemInfo> _itemInfoList;
 
     private int _previousItem;
     private int randomIndex;
@@ -20,7 +22,10 @@ public class ItemManager : Singleton<ItemManager>
 
     private void Init()
     {
-        _itemList = new List<ItemType>();
+        _itemList = new List<SO_Item>();
+        _itemInfoList = new List<ItemInfo>();
+
+        GameManager.Instance.onItemToShow += SendItemsToShow;
 
         _previousItem = -1;
         randomIndex = -1;
@@ -30,28 +35,31 @@ public class ItemManager : Singleton<ItemManager>
     {
         while (_itemList.Count < _itemCollectableList.Count)
         {
-            randomIndex = Random.Range(0, _itemCollectableList.Count - 1);
+            randomIndex = Random.Range(0, _itemCollectableList.Count);
 
-            var randomType = _itemCollectableList[randomIndex].Type;
+            var randomItem = _itemCollectableList[randomIndex];
 
             if (randomIndex != _previousItem)
             {
-                if(CheckType(randomType))
+                if(CheckType(randomItem.Type))
                 {
-                    Debug.Log("item name:" + randomType.ToString());
-                    _itemList.Add(randomType);
+                    //Debug.Log("item name:" + randomItem.ToString());
+                    _itemList.Add(randomItem);
+
+                    if (_itemList.Count == 3)
+                        break;
                 }
 
                 _previousItem = randomIndex;
             }
         }
         
-        UIController.Instance.FiilUiItemList(_itemCollectableList);
+        UIController.Instance.FiilUiItemList(_itemList);
     }
 
     private bool CheckType(ItemType type)
     {
-        var count = _itemList.Where(x => x == type).Count();
+        var count = _itemList.Where(x => x.Type == type).Count();
 
         return count != 0 ? false : true;
     }
@@ -60,4 +68,28 @@ public class ItemManager : Singleton<ItemManager>
     {
         UIController.Instance.UpdateUIItem(type);
     }
+
+    private void SetCurrentItemInfo()
+    {
+        foreach(SO_Item item in _itemList)
+        {
+            _itemInfoList.Add(new ItemInfo()
+            {
+                type = item.Type,
+                qtd = item.Pontuation
+            });
+        }
+    }
+    public List<ItemInfo> SendItemsToShow()
+    {
+        SetCurrentItemInfo();
+
+        return _itemInfoList;
+    }
+}
+
+public struct ItemInfo
+{
+    public ItemType type;
+    public int qtd;
 }
