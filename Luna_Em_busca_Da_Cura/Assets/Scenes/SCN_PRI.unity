@@ -1259,7 +1259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8a59dcc62396345abb00c7717c20f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemCollectableList: []
+  _itemCollectableList:
+  - {fileID: 11400000, guid: 15ff4ef32dd01bf43a6558ff1f4a5ce5, type: 2}
+  - {fileID: 11400000, guid: 6388eac2f1877b14e96860efdf743be3, type: 2}
+  - {fileID: 11400000, guid: 0913ddd7e9f79484f95456ec3818cf75, type: 2}
 --- !u!4 &1692326673
 Transform:
   m_ObjectHideFlags: 0

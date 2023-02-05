@@ -19,7 +19,6 @@ public class ItemManager : Singleton<ItemManager>
 
     private void Init()
     {
-        _itemCollectableList = new List<SO_Item>();
         _itemList = new List<ItemType>();
 
         _previousItem = -1;
@@ -36,7 +35,7 @@ public class ItemManager : Singleton<ItemManager>
             }
             else
             {
-                randomIndex = Random.Range(0, _itemCollectableList.Count);
+                randomIndex = Random.Range(0, _itemCollectableList.Count - 1);
             }
 
             _previousItem = randomIndex;
