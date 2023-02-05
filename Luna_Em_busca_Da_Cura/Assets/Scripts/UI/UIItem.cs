@@ -23,7 +23,7 @@ public class UIItem : MonoBehaviour
     public void init(SO_Item itemInfo)
     {
         _type = itemInfo.Type;
-        _increment = itemInfo.Pontuation;
+        _increment = 1;
         _currentValue = 0;
         _qtd.text = _currentValue.ToString();
         _itemImage.sprite = itemInfo._itemImage;
