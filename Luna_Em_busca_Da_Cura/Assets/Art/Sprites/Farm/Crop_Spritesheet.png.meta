@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -2297,11 +2297,11 @@ TextureImporter:
       Crop_Spritesheet_23: -1431968454
       Crop_Spritesheet_67: 1806995087
       Crop_Spritesheet_19: -1732579950
-      Crop_Spritesheet_32: -1577325632
       Crop_Spritesheet_49: 574877700
+      Crop_Spritesheet_92: -63633647
       Crop_Spritesheet_48: -44396297
       Crop_Spritesheet_71: -1793649574
-      Crop_Spritesheet_92: -63633647
+      Crop_Spritesheet_32: -1577325632
       Crop_Spritesheet_38: 1348563877
       Crop_Spritesheet_89: 2101860568
       Crop_Spritesheet_39: 1830535028
@@ -2309,8 +2309,8 @@ TextureImporter:
       Crop_Spritesheet_52: -447969584
       Crop_Spritesheet_40: -821713623
       Crop_Spritesheet_5: 1015459789
-      Crop_Spritesheet_64: -900343693
       Crop_Spritesheet_95: -2123254867
+      Crop_Spritesheet_64: -900343693
       Crop_Spritesheet_27: 1775087261
       Crop_Spritesheet_73: 1657024758
       Crop_Spritesheet_68: -2113240434
