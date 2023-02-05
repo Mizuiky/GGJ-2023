@@ -58,7 +58,10 @@ public class UIController : Singleton<UIController>
 
     public void UpdateUIItem(ItemType type)
     {
-        var item = _items[type];
-        item.UpdateQtd();
+        if(_items.ContainsKey(type))
+        {
+            var item = _items[type];
+            item.UpdateQtd();
+        }     
     }
 }
