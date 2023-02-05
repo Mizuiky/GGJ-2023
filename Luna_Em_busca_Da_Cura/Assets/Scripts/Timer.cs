@@ -26,4 +26,9 @@ public class Timer : MonoBehaviour
     {
         IsPlay = false;
     }
+
+    public void AddTime(float timeAdd)
+    {
+        timer += timeAdd;
+    }
 }
