@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Start()
     {
-       
+        AudioManager.Instance.PlayAudio("MainMenuSound");
     }
 
     public void StartGame()
